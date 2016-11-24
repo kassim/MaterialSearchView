@@ -21,6 +21,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -28,9 +29,9 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.miguelcatalan.materialsearchview.utils.AnimationUtil;
@@ -58,7 +59,7 @@ public class MaterialSearchView extends FrameLayout implements Filter.FilterList
     private ImageButton mVoiceBtn;
     private ImageButton mEmptyBtn;
     private ImageButton mExtraBtn;
-    private RelativeLayout mSearchTopBar;
+    private ViewGroup mSearchTopBar;
 
     private CharSequence mOldQueryText;
     private CharSequence mUserQuery;
@@ -157,7 +158,7 @@ public class MaterialSearchView extends FrameLayout implements Filter.FilterList
         LayoutInflater.from(mContext).inflate(R.layout.search_view, this, true);
         mSearchLayout = findViewById(R.id.search_layout);
 
-        mSearchTopBar = (RelativeLayout) mSearchLayout.findViewById(R.id.search_top_bar);
+        mSearchTopBar = (ViewGroup) mSearchLayout.findViewById(R.id.search_top_bar);
         mSuggestionsListView = (ListView) mSearchLayout.findViewById(R.id.suggestion_list);
         mSearchSrcTextView = (EditText) mSearchLayout.findViewById(R.id.searchTextView);
         mBackBtn = (ImageButton) mSearchLayout.findViewById(R.id.action_up_btn);
